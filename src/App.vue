@@ -40,9 +40,9 @@ const sections = ref([
 
 // Contact links
 const contactLinks = ref([
-  { type: 'email', icon: 'fas fa-envelope', label: 'Email', url: 'pratchjp@hotmail.com' },
-  { type: 'github', icon: 'fab fa-github', label: 'GitHub', url: 'https://github.com/Pratchaya-jamp' },
-  { type: 'linkedin', icon: 'fab fa-linkedin', label: 'LinkedIn', url: 'https://www.linkedin.com/in/pratchaya-champates-a77012381/' }
+  { type: 'email', icon: '/icon/email-icon.png', label: 'Email', url: 'pratchjp@hotmail.com' },
+  { type: 'github', icon: '/icon/github-icon.png', label: 'GitHub', url: 'https://github.com/Pratchaya-jamp' },
+  { type: 'linkedin', icon: '/icon/linkedin-icon.png', label: 'LinkedIn', url: 'https://www.linkedin.com/in/pratchaya-champates-a77012381/' }
 ])
 
 // Stats
@@ -161,7 +161,7 @@ const projects = ref([
     description: "Developed and managed a full-stack e-commerce application for a mobile shop, covering both the front-end and back-end.",
     technologies: ["JavaScript", "Vue.js", "TailwindCSS", 'ElysiaJS', 'MySQL'],
     github: "https://github.com/Pratchaya-jamp/Lyxia-Mobile",
-    icon: "/project/lyxiamobile"
+    icon: "/project/lyxiamobile.png"
   },
   {
     id: 4,
@@ -187,7 +187,7 @@ const projects = ref([
     technologies: ["HTML", "CSS"],
     github: "https://github.com/Pratchaya-jamp/my-portfolio",
     demo: "https://elix-portfolio.netlify.app/",
-    icon: "/project/profolio.png"
+    icon: "/project/portfolio.png"
   }
 ])
 
@@ -296,7 +296,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <div class="min-h-screen bg-gradient-to-br from-purple-600 via-blue-600 to-indigo-800">
+  <div class="min-h-screen bg-gradient-to-r from-amber-500 to-pink-500">
     <!-- Navigation -->
     <nav class="fixed top-0 left-0 right-0 z-50 bg-white/10 backdrop-blur-md border-b border-white/20">
       <div class="max-w-6xl mx-auto px-6 py-4">
@@ -310,7 +310,7 @@ onMounted(() => {
               :class="[
                 'px-4 py-2 rounded-full transition-all duration-300',
                 activeSection === section.id 
-                  ? 'bg-white text-purple-600 shadow-lg' 
+                  ? 'bg-white text-amber-600 shadow-lg' 
                   : 'text-white hover:bg-white/20'
               ]"
             >
@@ -357,7 +357,7 @@ onMounted(() => {
           <h1 class="text-5xl md:text-7xl font-bold text-white mb-4 fade-in">
             {{ personalInfo.name }}
           </h1>
-          <p class="text-2xl md:text-3xl text-purple-200 mb-8 fade-in">
+          <p class="text-2xl md:text-3xl text-amber-200 mb-8 fade-in">
             {{ personalInfo.title }}
           </p>
           <p class="text-lg text-white/80 max-w-2xl mx-auto mb-8 fade-in">
@@ -381,7 +381,7 @@ onMounted(() => {
         <div class="mt-8">
           <button 
             @click="downloadCV"
-            class="bg-white text-purple-600 font-bold py-3 px-8 rounded-full shadow-lg hover:bg-purple-100 transition-all duration-300 transform hover:scale-105"
+            class="bg-white text-amber-600 font-bold py-3 px-8 rounded-full shadow-lg hover:bg-purple-100 transition-all duration-300 transform hover:scale-105"
           >
             <i class="fas fa-download mr-2"></i>
             Download CV
@@ -400,12 +400,12 @@ onMounted(() => {
     <!-- About Section -->
     <section id="about" class="py-20 px-6 bg-white">
       <div class="max-w-6xl mx-auto">
-        <h2 class="text-4xl font-bold text-gray-800 mb-12 text-center">About Me</h2>
+        <h2 class="text-4xl font-bold text-rose-800 mb-12 text-center">About Me</h2>
         <div class="grid md:grid-cols-2 gap-12 items-center">
           <div>
             <p class="text-lg text-gray-600 mb-6 leading-relaxed">
               A third-year student from the School of Information Technology (SIT), 
-              King Mongkut’s University of Technology Thonburi, with a strong passion for IT Support, 
+              King Mongkut's University of Technology Thonburi, with a strong passion for IT Support, 
               especially in technical troubleshooting, system maintenance, and end-user services. 
             </p>
             <p class="text-lg text-gray-600 mb-8 leading-relaxed">
@@ -415,13 +415,13 @@ onMounted(() => {
             </p>
             <div class="grid grid-cols-2 gap-6">
               <div v-for="stat in stats" :key="stat.label" class="text-center">
-                <div class="text-3xl font-bold text-purple-600 mb-2">{{ stat.value }}</div>
+                <div class="text-3xl font-bold text-amber-600 mb-2">{{ stat.value }}</div>
                 <div class="text-gray-600">{{ stat.label }}</div>
               </div>
             </div>
           </div>
           <div class="relative">
-            <div class="bg-gradient-to-r from-purple-500 to-blue-500 rounded-2xl p-8 text-white shadow-2xl transform rotate-3 hover:rotate-0 transition-transform duration-300">
+            <div class="bg-gradient-to-r from-amber-500 to-pink-500 rounded-2xl p-8 text-white shadow-2xl transform rotate-3 hover:rotate-0 transition-transform duration-300">
               <h3 class="text-2xl font-bold mb-4">Quick Facts</h3>
               <ul class="space-y-3">
                 <li v-for="fact in quickFacts" :key="fact" class="flex items-center space-x-2">
@@ -438,7 +438,7 @@ onMounted(() => {
     <!-- Skills Section -->
     <section id="skills" class="py-20 px-6 bg-gray-50">
       <div class="max-w-6xl mx-auto">
-        <h2 class="text-4xl font-bold text-gray-800 mb-12 text-center">Technical Skills</h2>
+        <h2 class="text-4xl font-bold text-amber-800 mb-12 text-center">Technical Skills</h2>
         
         <!-- Skill Categories -->
         <div class="flex flex-wrap justify-center mb-8 space-x-4">
@@ -449,7 +449,7 @@ onMounted(() => {
             :class="[
               'px-6 py-2 rounded-full transition-all duration-300 mb-2',
               selectedCategory === category 
-                ? 'bg-purple-600 text-white shadow-lg' 
+                ? 'bg-amber-600 text-white shadow-lg' 
                 : 'bg-white text-gray-600 hover:bg-purple-100'
             ]"
           >
@@ -466,11 +466,11 @@ onMounted(() => {
           >
             <div class="flex justify-between items-center mb-4">
               <h3 class="text-lg font-semibold text-gray-800">{{ skill.name }}</h3>
-              <span class="text-purple-600 font-bold">{{ skill.level }}%</span>
+              <span class="text-rose-600 font-bold">{{ skill.level }}%</span>
             </div>
             <div class="w-full bg-gray-200 rounded-full h-3">
               <div 
-                class="bg-gradient-to-r from-purple-500 to-blue-500 h-3 rounded-full skill-bar"
+                class="bg-gradient-to-r from-amber-500 to-pink-500 h-3 rounded-full skill-bar"
                 :style="{ width: skillsAnimated ? skill.level + '%' : '0%' }"
               ></div>
             </div>
@@ -482,7 +482,7 @@ onMounted(() => {
     <!-- Experience Section -->
     <section id="experience" class="py-20 px-6 bg-white">
       <div class="max-w-6xl mx-auto">
-        <h2 class="text-4xl font-bold text-gray-800 mb-12 text-center">Work Experience</h2>
+        <h2 class="text-4xl font-bold text-rose-800 mb-12 text-center">Work Experience</h2>
         <div class="relative">
           <!-- Timeline Line -->
           <div class="absolute left-8 top-0 bottom-0 w-0.5 bg-purple-300 hidden md:block"></div>
@@ -494,14 +494,14 @@ onMounted(() => {
               class="relative flex flex-col md:flex-row items-start"
             >
               <!-- Timeline Dot -->
-              <div class="hidden md:flex absolute left-6 w-4 h-4 bg-purple-600 rounded-full border-4 border-white shadow-lg"></div>
+              <div class="hidden md:flex absolute left-6 w-4 h-4 bg-amber-600 rounded-full border-4 border-white shadow-lg"></div>
               
               <!-- Content -->
               <div class="md:ml-20 bg-gray-50 rounded-xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 w-full">
                 <div class="flex flex-col md:flex-row md:justify-between md:items-start mb-4">
                   <div>
                     <h3 class="text-2xl font-bold text-gray-800 mb-2">{{ job.position }}</h3>
-                    <h4 class="text-xl text-purple-600 font-semibold mb-2">{{ job.company }}</h4>
+                    <h4 class="text-xl text-amber-600 font-semibold mb-2">{{ job.company }}</h4>
                   </div>
                   <span class="text-gray-600 bg-white px-4 py-2 rounded-full">{{ job.period }}</span>
                 </div>
@@ -510,7 +510,7 @@ onMounted(() => {
                   <span 
                     v-for="tech in job.technologies" 
                     :key="tech"
-                    class="bg-purple-100 text-purple-700 px-3 py-1 rounded-full text-sm font-medium"
+                    class="bg-rose-100 text-rose-700 px-3 py-1 rounded-full text-sm font-medium"
                   >
                     {{ tech }}
                   </span>
@@ -525,21 +525,25 @@ onMounted(() => {
     <!-- Projects Section -->
     <section id="projects" class="py-20 px-6 bg-gray-50">
       <div class="max-w-6xl mx-auto">
-        <h2 class="text-4xl font-bold text-gray-800 mb-12 text-center">Featured Projects</h2>
+        <h2 class="text-4xl font-bold text-rose-800 mb-12 text-center">Featured Projects</h2>
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           <div 
             v-for="project in projects" 
             :key="project.id"
             class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-105 group"
           >
-            <div class="h-48 bg-gradient-to-br from-purple-400 to-blue-500 relative overflow-hidden">
+            <div class="h-48 relative overflow-hidden">
+            <img 
+              :src="project.icon" 
+              class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+            />
               <div class="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-all duration-300"></div>
               <div class="absolute bottom-4 left-4 text-white">
                 <i class="text-3xl'"></i>
               </div>
             </div>
             <div class="p-6">
-              <h3 class="text-xl font-bold text-gray-800 mb-3">{{ project.name }}</h3>
+              <h3 class="text-xl font-bold bg-gradient-to-r from-rose-400 to-red-500 bg-clip-text text-transparent">{{ project.name }}</h3>
               <p class="text-gray-600 mb-4">{{ project.description }}</p>
               <div class="flex flex-wrap gap-2 mb-4">
                 <span 
@@ -553,14 +557,14 @@ onMounted(() => {
               <div class="flex space-x-4">
                 <a 
                   :href="project.github" 
-                  class="flex items-center space-x-2 text-purple-600 hover:text-purple-800 transition-colors"
+                  class="flex items-center space-x-2 text-amber-600 hover:text-gray-800 transition-colors"
                 >
                   <Github size="16" />
                   <span>Code</span>
                 </a>
                 <a 
                   :href="project.demo" 
-                  class="flex items-center space-x-2 text-blue-600 hover:text-blue-800 transition-colors"
+                  class="flex items-center space-x-2 text-blue-600 hover:text-gray-800 transition-colors"
                 >
                   <Globe size="16" />
                   <span>Demo</span>
@@ -575,7 +579,7 @@ onMounted(() => {
     <!-- Education Section -->
     <section id="education" class="py-20 px-6 bg-white">
       <div class="max-w-6xl mx-auto">
-        <h2 class="text-4xl font-bold text-gray-800 mb-12 text-center">Education</h2>
+        <h2 class="text-4xl font-bold text-amber-800 mb-12 text-center">Education</h2>
         <div class="relative">
           <!-- Timeline Line -->
           <div class="absolute left-8 top-0 bottom-0 w-0.5 bg-purple-300 hidden md:block"></div>
@@ -587,14 +591,14 @@ onMounted(() => {
               class="relative flex flex-col md:flex-row items-start"
             >
               <!-- Timeline Dot -->
-              <div class="hidden md:flex absolute left-6 w-4 h-4 bg-purple-600 rounded-full border-4 border-white shadow-lg"></div>
+              <div class="hidden md:flex absolute left-6 w-4 h-4 bg-amber-600 rounded-full border-4 border-white shadow-lg"></div>
               
               <!-- Content -->
               <div class="md:ml-20 bg-gray-50 rounded-xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 w-full">
                 <div class="flex flex-col md:flex-row md:justify-between md:items-start mb-4">
                   <div>
                     <h3 class="text-2xl font-bold text-gray-800 mb-2">{{ edu.facility }}</h3>
-                    <h4 class="text-xl text-purple-600 font-semibold mb-2">{{ edu.name }}</h4>
+                    <h4 class="text-xl text-amber-600 font-semibold mb-2">{{ edu.name }}</h4>
                   </div>
                   <span class="text-gray-600 bg-white px-4 py-2 rounded-full">{{ edu.period }}</span>
                 </div>
@@ -607,7 +611,7 @@ onMounted(() => {
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="py-20 px-6 bg-gradient-to-r from-purple-600 to-blue-600">
+    <section id="contact" class="py-20 px-6 bg-gradient-to-r from-amber-500 to-pink-500">
       <div class="max-w-4xl mx-auto text-center">
         <h2 class="text-4xl font-bold text-white mb-8">Feel Free to Contact</h2>
         <p class="text-xl text-purple-100 mb-12">
@@ -617,17 +621,17 @@ onMounted(() => {
         <div class="grid md:grid-cols-3 gap-8 mb-12">
           <div class="bg-white/10 backdrop-blur-sm rounded-xl p-6 text-white hover:bg-white/20 transition-all duration-300">
             <h3 class="text-lg font-semibold mb-2">Email</h3>
-            <p class="text-purple-100">{{ personalInfo.email }}</p>
+            <p class="text-rose-100">{{ personalInfo.email }}</p>
           </div>
           <div class="bg-white/10 backdrop-blur-sm rounded-xl p-6 text-white hover:bg-white/20 transition-all duration-300">
             <Phone class="mx-auto mb-4" size="32" />
             <h3 class="text-lg font-semibold mb-2">Phone</h3>
-            <p class="text-purple-100">{{ personalInfo.phone }}</p>
+            <p class="text-rose-100">{{ personalInfo.phone }}</p>
           </div>
           <div class="bg-white/10 backdrop-blur-sm rounded-xl p-6 text-white hover:bg-white/20 transition-all duration-300">
             <MapPin class="mx-auto mb-4" size="32" />
             <h3 class="text-lg font-semibold mb-2">Location</h3>
-            <p class="text-purple-100">{{ personalInfo.location }}</p>
+            <p class="text-rose-100">{{ personalInfo.location }}</p>
           </div>
         </div>
       </div>
