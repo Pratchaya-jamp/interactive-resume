@@ -1,6 +1,5 @@
 <script setup>
 import { ref, computed, onMounted, nextTick } from 'vue'
-import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 
 // Reactive data
 const activeSection = ref('hero')
@@ -35,7 +34,8 @@ const sections = ref([
   { id: 'skills', name: 'Skills' },
   { id: 'experience', name: 'Experience' },
   { id: 'projects', name: 'Projects' },
-  { id: 'contact', name: 'Contact' }
+  { id: 'education', name: 'Education' },
+  // { id: 'contact', name: 'Contact' }
 ])
 
 // Contact links
@@ -49,8 +49,8 @@ const contactLinks = ref([
 const stats = ref([
   { value: '7', label: 'Projects' },
   { value: '3', label: 'Years Education' },
-  { value: '5', label: 'Frameworks' },
-  { value: '2', label: 'Languages' }
+  { value: '2', label: 'Frameworks' },
+  { value: '5', label: 'Languages' }
 ])
 
 // Quick facts
@@ -191,6 +191,21 @@ const projects = ref([
   }
 ])
 
+const education = ref([
+  {
+    name: "King Mongkut's University of Technology Thonburi",
+    facility: "Bachelor of Information Technology",
+    period: "2023 - Present",
+    gpax: "2.20/4.00"
+  },
+  {
+    name: "Watsongtham School",
+    facility: "Gifted Class: Science & Math Program",
+    period: "2016 - 2022",
+    gpax: "3.33/4.00"
+  },
+])
+
 // Computed properties
 const skillCategories = computed(() => {
   const categories = ['All', ...new Set(skills.value.map(skill => skill.category))]
@@ -237,8 +252,18 @@ const submitForm = async () => {
   }, 2000)
 }
 
+const downloadCV = () => {
+  const cvPath = '/documents/My-Resume.pdf'; 
+  const link = document.createElement('a');
+  link.href = cvPath;
+  link.download = 'Pratchaya_Champates_Resume.pdf';
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
+};
+
 const handleScroll = () => {
-  const sections = ['hero', 'about', 'skills', 'experience', 'projects', 'contact']
+  const sections = ['hero', 'about', 'skills', 'experience', 'projects', 'education']
   
   for (let section of sections) {
     const element = document.getElementById(section)
@@ -351,6 +376,16 @@ onMounted(() => {
             <i :class="contact.icon"></i>
             <span>{{ contact.label }}</span>
           </a>
+        </div>
+
+        <div class="mt-8">
+          <button 
+            @click="downloadCV"
+            class="bg-white text-purple-600 font-bold py-3 px-8 rounded-full shadow-lg hover:bg-purple-100 transition-all duration-300 transform hover:scale-105"
+          >
+            <i class="fas fa-download mr-2"></i>
+            Download CV
+          </button>
         </div>
         
         <button 
@@ -537,12 +572,46 @@ onMounted(() => {
       </div>
     </section>
 
+    <!-- Education Section -->
+    <section id="education" class="py-20 px-6 bg-white">
+      <div class="max-w-6xl mx-auto">
+        <h2 class="text-4xl font-bold text-gray-800 mb-12 text-center">Education</h2>
+        <div class="relative">
+          <!-- Timeline Line -->
+          <div class="absolute left-8 top-0 bottom-0 w-0.5 bg-purple-300 hidden md:block"></div>
+          
+          <div class="space-y-12">
+            <div 
+              v-for="(edu, index) in education" 
+              :key="index"
+              class="relative flex flex-col md:flex-row items-start"
+            >
+              <!-- Timeline Dot -->
+              <div class="hidden md:flex absolute left-6 w-4 h-4 bg-purple-600 rounded-full border-4 border-white shadow-lg"></div>
+              
+              <!-- Content -->
+              <div class="md:ml-20 bg-gray-50 rounded-xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 w-full">
+                <div class="flex flex-col md:flex-row md:justify-between md:items-start mb-4">
+                  <div>
+                    <h3 class="text-2xl font-bold text-gray-800 mb-2">{{ edu.facility }}</h3>
+                    <h4 class="text-xl text-purple-600 font-semibold mb-2">{{ edu.name }}</h4>
+                  </div>
+                  <span class="text-gray-600 bg-white px-4 py-2 rounded-full">{{ edu.period }}</span>
+                </div>
+                <p class="text-gray-600 mb-6">GPAX: {{ edu.gpax }}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- Contact Section -->
     <section id="contact" class="py-20 px-6 bg-gradient-to-r from-purple-600 to-blue-600">
       <div class="max-w-4xl mx-auto text-center">
-        <h2 class="text-4xl font-bold text-white mb-8">Let's Work Together</h2>
+        <h2 class="text-4xl font-bold text-white mb-8">Feel Free to Contact</h2>
         <p class="text-xl text-purple-100 mb-12">
-          Ready to bring your ideas to life? Let's discuss your next project!
+          I'm ready to learn and contribute my skills as an intern. Let's discuss this opportunity!
         </p>
         
         <div class="grid md:grid-cols-3 gap-8 mb-12">
@@ -561,40 +630,6 @@ onMounted(() => {
             <p class="text-purple-100">{{ personalInfo.location }}</p>
           </div>
         </div>
-
-        <!-- Contact Form -->
-        <form @submit.prevent="submitForm" class="bg-white/10 backdrop-blur-sm rounded-xl p-8 max-w-2xl mx-auto">
-          <div class="grid md:grid-cols-2 gap-6 mb-6">
-            <input 
-              v-model="form.name"
-              type="text" 
-              placeholder="Your Name"
-              class="w-full px-4 py-3 rounded-lg bg-white/20 border border-white/30 text-white placeholder-purple-200 focus:outline-none focus:ring-2 focus:ring-white/50"
-              required
-            >
-            <input 
-              v-model="form.email"
-              type="email" 
-              placeholder="Your Email"
-              class="w-full px-4 py-3 rounded-lg bg-white/20 border border-white/30 text-white placeholder-purple-200 focus:outline-none focus:ring-2 focus:ring-white/50"
-              required
-            >
-          </div>
-          <textarea 
-            v-model="form.message"
-            placeholder="Your Message"
-            rows="5"
-            class="w-full px-4 py-3 rounded-lg bg-white/20 border border-white/30 text-white placeholder-purple-200 focus:outline-none focus:ring-2 focus:ring-white/50 mb-6"
-            required
-          ></textarea>
-          <button 
-            type="submit"
-            :disabled="isSubmitting"
-            class="w-full bg-white text-purple-600 py-3 px-8 rounded-lg font-semibold hover:bg-purple-50 transition-all duration-300 disabled:opacity-50"
-          >
-            {{ isSubmitting ? 'Sending...' : 'Send Message' }}
-          </button>
-        </form>
       </div>
     </section>
 
@@ -604,27 +639,6 @@ onMounted(() => {
         <p>&copy; {{ currentYear }} {{ personalInfo.name }}. Built with Vue.js & Tailwind CSS.</p>
       </div>
     </footer>
-
-    <!-- Success Modal -->
-    <div 
-      v-if="showSuccessModal"
-      class="fixed inset-0 bg-black/50 flex items-center justify-center z-50 px-6"
-      @click="showSuccessModal = false"
-    >
-      <div class="bg-white rounded-xl p-8 max-w-md mx-auto text-center">
-        <div class="text-green-500 text-5xl mb-4">
-          <i class="fas fa-check-circle"></i>
-        </div>
-        <h3 class="text-2xl font-bold text-gray-800 mb-4">Message Sent!</h3>
-        <p class="text-gray-600 mb-6">Thanks for reaching out. I'll get back to you soon!</p>
-        <button 
-          @click="showSuccessModal = false"
-          class="bg-purple-600 text-white px-6 py-2 rounded-lg hover:bg-purple-700 transition-colors"
-        >
-          Close
-        </button>
-      </div>
-    </div>
   </div>
 </template>
 
