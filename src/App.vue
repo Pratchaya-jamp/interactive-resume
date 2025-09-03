@@ -47,10 +47,10 @@ const contactLinks = ref([
 
 // Stats
 const stats = ref([
-  { value: '50+', label: 'Projects' },
-  { value: '5+', label: 'Years Experience' },
-  { value: '20+', label: 'Happy Clients' },
-  { value: '10+', label: 'Technologies' }
+  { value: '7', label: 'Projects' },
+  { value: '3', label: 'Years Education' },
+  { value: '5', label: 'Frameworks' },
+  { value: '2', label: 'Languages' }
 ])
 
 // Quick facts
@@ -62,40 +62,45 @@ const quickFacts = ref([
 
 // Skills data
 const skills = ref([
-  { name: "Vue.js", level: 95, category: "Frontend" },
-  { name: "React", level: 90, category: "Frontend" },
-  { name: "TypeScript", level: 88, category: "Language" },
-  { name: "JavaScript", level: 92, category: "Language" },
-  { name: "Node.js", level: 85, category: "Backend" },
-  { name: "Python", level: 80, category: "Language" },
-  { name: "Express.js", level: 83, category: "Backend" },
-  { name: "PostgreSQL", level: 78, category: "Database" },
-  { name: "MongoDB", level: 75, category: "Database" },
-  { name: "AWS", level: 72, category: "Cloud" },
+  { name: "Vue.js", level: 65, category: "Frontend" },
+  { name: "TypeScript", level: 50, category: "Language" },
+  { name: "JavaScript", level: 60, category: "Language" },
+  { name: "Java", level: 60, category: "Backend" },
+  { name: "ElysiaJS", level: 55, category: "Backend" },
+  { name: "MySQL", level: 70, category: "Database" },
+  { name: "JSON", level: 75, category: "Database" },
+  { name: "XML", level: 53, category: "Database" },
   { name: "Docker", level: 76, category: "DevOps" },
-  { name: "Git", level: 90, category: "Tools" },
-  { name: "Tailwind CSS", level: 88, category: "Frontend" },
-  { name: "REST APIs", level: 85, category: "Backend" }
+  { name: "NGINX", level: 52, category: "DevOps" },
+  { name: "Linux", level: 76, category: "OS" },
+  { name: "MacOS", level: 40, category: "OS" },
+  { name: "Windows", level: 85, category: "OS" },
+  { name: "Git", level: 75, category: "Tools" },
+  { name: "Wireshark", level: 60, category: "Tools" },
+  { name: "Networking", level: 60, category: "Tools" },
+  { name: "Postman", level: 75, category: "Tools" },
+  { name: "Maven", level: 50, category: "Tools" },
+  { name: "Tailwind CSS", level: 50, category: "Frontend" }
 ])
 
 // Experience data
 const experience = ref([
   {
-    company: "TechCorp Inc.",
-    position: "Senior Full Stack Developer",
-    period: "2022 - Present",
-    description: "Leading development of enterprise web applications using Vue.js and Node.js. Mentoring junior developers and implementing best practices for scalable architecture.",
-    technologies: ["Vue.js", "Node.js", "PostgreSQL", "AWS", "Docker"]
+    company: "IT3K#19",
+    position: "Wireless Networking",
+    period: "09 March 2025",
+    description: "planned and configured a secure wireless network, which included surveying the site, placing Access Points, and setting up secure access via LDAP/RADIUS and WPA2 Personal.",
+    technologies: ['Networking', 'Switch Configuration', 'WLAN Monitoring']
   },
   {
-    company: "StartupXYZ",
-    position: "Frontend Developer",
-    period: "2020 - 2022",
-    description: "Built responsive web applications and improved user experience. Collaborated with design team to implement pixel-perfect UI components.",
-    technologies: ["React", "TypeScript", "Redux", "Sass", "Jest"]
+    company: "ITB-MSHOP Web Application",
+    position: "Frontend Developer & Infrastructure",
+    period: "In-Progress",
+    description: "Working in a Scrum team, I helped develop and deploy a task management web application, setting up the server using Docker and Nginx.",
+    technologies: ["Vue.js", "Java", "MySQL", "Linux", "HTML", "CSS"]
   },
   {
-    company: "Digital Agency",
+    company: "Vue NoteApp",
     position: "Web Developer",
     period: "2019 - 2020",
     description: "Developed custom websites and web applications for various clients. Focused on performance optimization and SEO implementation.",
