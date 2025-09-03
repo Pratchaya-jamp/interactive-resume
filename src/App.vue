@@ -94,17 +94,45 @@ const experience = ref([
   },
   {
     company: "ITB-MSHOP Web Application",
-    position: "Frontend Developer & Infrastructure",
+    position: "Web Developer & Infrastructure",
     period: "In-Progress",
     description: "Working in a Scrum team, I helped develop and deploy a task management web application, setting up the server using Docker and Nginx.",
-    technologies: ["Vue.js", "Java", "MySQL", "Linux", "HTML", "CSS"]
+    technologies: ["Vue.js", "Java", "MySQL", "Linux", "HTML", "TailwindCSS"]
+  },
+  {
+    company: "Lyxia E-Commerce Application Mobile Shop",
+    position: "Full-Stack Developer",
+    period: "In-Progress",
+    description: "Developed and managed a full-stack e-commerce application for a mobile shop, covering both the front-end and back-end.",
+    technologies: ["JavaScript", "Vue.js", "TailwindCSS", 'ElysiaJS', 'MySQL']
   },
   {
     company: "Vue NoteApp",
+    position: "Frontend Developer",
+    period: "2nd-Year Semester 1",
+    description: "Created delete functions for both single and multiple item removal, and developed an instant search feature with real-time auto-filtering.",
+    technologies: ["JavaScript", "Vue.js", "TailwindCSS"]
+  },
+  {
+    company: "Meme's Blood: война(Voyna) Of Meme",
+    position: "Frontend Developer & Assets Designer",
+    period: "2nd-Year Semester 2",
+    description: "Managed a card inventory system to track user collections, developed in-game features like card images and sound, and created a pop-up function for viewing card details.",
+    technologies: ["JavaScript", "Vue.js", "TailwindCSS", 'JSON']
+  },
+  {
+    company: "Portfolio HTML Practice",
     position: "Web Developer",
-    period: "2019 - 2020",
-    description: "Developed custom websites and web applications for various clients. Focused on performance optimization and SEO implementation.",
-    technologies: ["JavaScript", "PHP", "MySQL", "WordPress", "jQuery"]
+    period: "June 2025",
+    description: "Built a website using HTML and CSS to serve as a clone-friendly layout example, helping little-brother practice web design by replicating a similar layout.",
+    technologies: ["HTML", "CSS"]
+  },
+  {
+    company: "Interactive Resume",
+    position: "Frontend Developer",
+    period: "September 2025",
+    description: "Create an interactive website resume to effectively showcase my skills and portfolio in a compelling and professional manner.",
+    technologies: ["Vue.js", "TailwindCSS", "JavaScript"]
   }
 ])
 
@@ -112,57 +140,54 @@ const experience = ref([
 const projects = ref([
   {
     id: 1,
-    name: "E-Commerce Platform",
-    description: "Full-stack e-commerce solution with real-time inventory, payment processing, and admin dashboard.",
-    technologies: ["Vue.js", "Node.js", "Stripe", "PostgreSQL"],
-    github: "https://github.com/alexjohnson/ecommerce",
-    demo: "https://demo.ecommerce.com",
-    icon: "fas fa-shopping-cart"
+    name: "IT3K#19",
+    description: "planned and configured a secure wireless network, which included surveying the site, placing Access Points, and setting up secure access via LDAP/RADIUS and WPA2 Personal.",
+    technologies: ['Networking', 'Switch Configuration', 'WLAN Monitoring'],
+    github: "https://www.facebook.com/reel/1190432596037160?locale=th_TH",
+    icon: "/project/it3k.png"
   },
   {
     id: 2,
-    name: "Task Management App",
-    description: "Collaborative project management tool with real-time updates, file sharing, and team chat.",
-    technologies: ["React", "Socket.io", "Express", "MongoDB"],
-    github: "https://github.com/alexjohnson/taskmanager",
-    demo: "https://demo.taskmanager.com",
-    icon: "fas fa-tasks"
+    name: "ITB-MSHOP Web Application",
+    description: "Working in a Scrum team, I helped develop and deploy a task management web application, setting up the server using Docker and Nginx.",
+    technologies: ["Vue.js", "Java", "MySQL", "Linux", "HTML", "TailwindCSS"],
+    github: "https://github.com/Pratchaya-jamp/ITB-MSHOP-SY4",
+    demo: "http://intproj24.sit.kmutt.ac.th/sy4/",
+    icon: "/project/itbmshop.png"
   },
   {
     id: 3,
-    name: "Weather Dashboard",
-    description: "Beautiful weather application with interactive maps, forecasts, and location-based alerts.",
-    technologies: ["Vue.js", "Chart.js", "Weather API", "Tailwind"],
-    github: "https://github.com/alexjohnson/weather",
-    demo: "https://demo.weather.com",
-    icon: "fas fa-cloud-sun"
+    name: "Lyxia E-Commerce Application Mobile Shop",
+    description: "Developed and managed a full-stack e-commerce application for a mobile shop, covering both the front-end and back-end.",
+    technologies: ["JavaScript", "Vue.js", "TailwindCSS", 'ElysiaJS', 'MySQL'],
+    github: "https://github.com/Pratchaya-jamp/Lyxia-Mobile",
+    icon: "/project/lyxiamobile"
   },
   {
     id: 4,
-    name: "Social Media Analytics",
-    description: "Dashboard for tracking social media metrics with data visualization and automated reporting.",
-    technologies: ["React", "D3.js", "Python", "FastAPI"],
-    github: "https://github.com/alexjohnson/analytics",
-    demo: "https://demo.analytics.com",
-    icon: "fas fa-chart-line"
+    name: "Vue NoteApp",
+    description: "Created delete functions for both single and multiple item removal, and developed an instant search feature with real-time auto-filtering.",
+    technologies: ["JavaScript", "Vue.js", "TailwindCSS"],
+    github: "https://github.com/Pratchaya-jamp/Vue-NoteApp",
+    demo: "https://capvuenote.netlify.app/",
+    icon: "/project/vuenote.png"
   },
   {
     id: 5,
-    name: "Recipe Sharing Platform",
-    description: "Community-driven recipe platform with user ratings, meal planning, and grocery list generation.",
-    technologies: ["Vue.js", "Firebase", "Nuxt.js", "Vuetify"],
-    github: "https://github.com/alexjohnson/recipes",
-    demo: "https://demo.recipes.com",
-    icon: "fas fa-utensils"
+    name: "Meme's Blood: война(Voyna) Of Meme",
+    description: "Managed a card inventory system to track user collections, developed in-game features like card images and sound, and created a pop-up function for viewing card details.",
+    technologies: ["JavaScript", "Vue.js", "TailwindCSS", 'JSON'],
+    github: "https://github.com/Pratchaya-jamp/Meme-Blood",
+    icon: "/project/memeblood.png"
   },
   {
     id: 6,
-    name: "Cryptocurrency Tracker",
-    description: "Real-time crypto portfolio tracker with price alerts, news integration, and market analysis.",
-    technologies: ["React", "Redux", "CoinGecko API", "Chart.js"],
-    github: "https://github.com/alexjohnson/crypto",
-    demo: "https://demo.crypto.com",
-    icon: "fab fa-bitcoin"
+    name: "Portfolio HTML Practice",
+    description: "Built a website using HTML and CSS to serve as a clone-friendly layout example, helping little-brother practice web design by replicating a similar layout.",
+    technologies: ["HTML", "CSS"],
+    github: "https://github.com/Pratchaya-jamp/my-portfolio",
+    demo: "https://elix-portfolio.netlify.app/",
+    icon: "/project/profolio.png"
   }
 ])
 
