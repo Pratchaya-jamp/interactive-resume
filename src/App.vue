@@ -535,7 +535,7 @@ onMounted(() => {
             <div class="h-48 bg-gradient-to-br from-purple-400 to-blue-500 relative overflow-hidden">
               <div class="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-all duration-300"></div>
               <div class="absolute bottom-4 left-4 text-white">
-                <i :class="project.icon + ' text-3xl'"></i>
+                <i class="text-3xl'"></i>
               </div>
             </div>
             <div class="p-6">
